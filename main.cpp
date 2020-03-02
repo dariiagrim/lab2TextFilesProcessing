@@ -5,10 +5,9 @@
 #include <map>
 #include <experimental/filesystem>
 #include <fstream>
-#include <sstream>
 
 using namespace std;
-namespace fs = std::experimental::filesystem;
+namespace fs = experimental::filesystem;
 
 vector<string> split(const string&, char);
 
@@ -16,18 +15,15 @@ int main() {
     string directoryName;
 
     cout << "Please, write path to directory: ";
-
     cin >> directoryName;
 
     vector<string> files;
-
     for (const auto& entry : fs::directory_iterator(directoryName)) {
         if (entry.path().extension().string() == ".csv")
             files.push_back(entry.path().string());
     }
 
     vector<string> countries;
-
     for (const string& fileName : files) {
         ifstream file;
         file.open(fileName);
