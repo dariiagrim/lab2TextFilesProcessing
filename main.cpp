@@ -10,19 +10,7 @@
 using namespace std;
 namespace fs = std::experimental::filesystem;
 
-vector<string> split(const string& a, char delimeter) {
-    vector<string> splitedString;
-    string b;
-    for (char symbol : a) {
-        if (symbol != delimeter)
-            b.push_back(symbol);
-        else {
-            splitedString.push_back(b);
-            b = "";
-        }
-    }
-    return splitedString;
-}
+vector<string> split(const string&, char);
 
 int main() {
     string directoryName;
@@ -62,4 +50,18 @@ int main() {
     }
 
     return 0;
+}
+
+vector<string> split(const string& a, char delimeter) {
+    vector<string> splitedString;
+    string b;
+    for (char symbol : a) {
+        if (symbol != delimeter)
+            b.push_back(symbol);
+        else {
+            splitedString.push_back(b);
+            b = "";
+        }
+    }
+    return splitedString;
 }
