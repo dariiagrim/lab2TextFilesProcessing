@@ -3,10 +3,10 @@
 #include <string>
 #include <algorithm>
 #include <map>
-#include <filesystem>
+#include <experimental/filesystem>
 
 using namespace std;
-namespace fs = std::filesystem;
+namespace fs = std::experimental::filesystem;
 
 int main() {
     string directoryName;
@@ -18,7 +18,11 @@ int main() {
     vector<string> files;
 
     for (const auto& entry : fs::directory_iterator(directoryName)) {
-        cout << entry.path().string() << endl;
+        if (entry.path().extension().string() == ".csv")
+            files.push_back(entry.path().string());
+    }
+    for (string file : files) {
+        cout << file << endl;
     }
 
     return 0;
