@@ -35,19 +35,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = "/Users/andriimoisol/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/193.6015.37/CLion.app/Contents/bin/cmake/mac/bin/cmake"
+CMAKE_COMMAND = /home/daria/Documents/clion-2019.3.2/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = "/Users/andriimoisol/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/193.6015.37/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E remove -f
+RM = /home/daria/Documents/clion-2019.3.2/bin/cmake/linux/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/andriimoisol/CLionProjects/lab2TextFilesProcessing
+CMAKE_SOURCE_DIR = /home/daria/Documents/labs2proga2sem/lab2TextFilesProcessing
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/andriimoisol/CLionProjects/lab2TextFilesProcessing/cmake-build-debug
+CMAKE_BINARY_DIR = /home/daria/Documents/labs2proga2sem/lab2TextFilesProcessing/cmake-build-debug
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -74,14 +74,14 @@ preinstall:
 CMakeFiles/Lab2Prog.dir/all:
 	$(MAKE) -f CMakeFiles/Lab2Prog.dir/build.make CMakeFiles/Lab2Prog.dir/depend
 	$(MAKE) -f CMakeFiles/Lab2Prog.dir/build.make CMakeFiles/Lab2Prog.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/andriimoisol/CLionProjects/lab2TextFilesProcessing/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target Lab2Prog"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/daria/Documents/labs2proga2sem/lab2TextFilesProcessing/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target Lab2Prog"
 .PHONY : CMakeFiles/Lab2Prog.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Lab2Prog.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/andriimoisol/CLionProjects/lab2TextFilesProcessing/cmake-build-debug/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/daria/Documents/labs2proga2sem/lab2TextFilesProcessing/cmake-build-debug/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Lab2Prog.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/andriimoisol/CLionProjects/lab2TextFilesProcessing/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/daria/Documents/labs2proga2sem/lab2TextFilesProcessing/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/Lab2Prog.dir/rule
 
 # Convenience name for target.
