@@ -10,16 +10,18 @@
 using namespace std;
 namespace fs = std::experimental::filesystem;
 
-vector<std::string> split(const string& s, char delimiter)
-{
-    vector<string> tokens;
-    string token;
-    istringstream tokenStream(s);
-    while (getline(tokenStream, token, delimiter))
-    {
-        tokens.push_back(token);
+vector<string> split(const string& a, char delimeter) {
+    vector<string> splitedString;
+    string b;
+    for (char symbol : a) {
+        if (symbol != delimeter)
+            b.push_back(symbol);
+        else {
+            splitedString.push_back(b);
+            b = "";
+        }
     }
-    return tokens;
+    return splitedString;
 }
 
 int main() {
