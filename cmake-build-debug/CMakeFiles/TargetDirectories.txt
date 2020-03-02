@@ -1,3 +1,0 @@
-/home/daria/Documents/labs2proga2sem/lab2TextFilesProcessing/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/daria/Documents/labs2proga2sem/lab2TextFilesProcessing/cmake-build-debug/CMakeFiles/Lab2Prog.dir
-/home/daria/Documents/labs2proga2sem/lab2TextFilesProcessing/cmake-build-debug/CMakeFiles/edit_cache.dir

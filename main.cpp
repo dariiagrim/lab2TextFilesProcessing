@@ -7,6 +7,11 @@
 using namespace std;
 
 int main() {
-    cout << "Hello, World!" << endl;
+    string directoryName;
+
+    cout << "Please, write name of directory: ";
+
+    cin >> directoryName;
+
     return 0;
 }
