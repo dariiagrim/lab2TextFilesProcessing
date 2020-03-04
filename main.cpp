@@ -53,12 +53,18 @@ int main() {
         }
     }
 
-    for (int i = 0; i < countries.size(); i++) {
-        cout << countries[i] << ": ";
-        vector<int> Indexes = getSortedIndexes(countryPoints[i]);
-        for (int p : Indexes)
-            cout << countries[p] << " ";
-        cout << endl;
+    map<string, int> points;
+
+    for (int i = 0; i < countryPoints.size(); i++) {
+        vector<int> indexes = getSortedIndexes(countryPoints[i]);
+        points[countries[indexes[0]]] += 12;
+        points[countries[indexes[1]]] += 10;
+        for (int j = 2; j < 10; j++)
+            points[countries[indexes[j]]] += 10 - j;
+    }
+
+    for (string country : countries) {
+        cout << country << " -> " << points[country] << endl;
     }
 
     return 0;
