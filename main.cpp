@@ -9,7 +9,9 @@
 using namespace std;
 namespace fs = experimental::filesystem;
 
-vector<string> split(const string&, char);
+vector<string> split(const string &, char);
+
+vector<int> getSortedIndexes(vector<int> &);
 
 int main() {
     string directoryName;
@@ -18,14 +20,14 @@ int main() {
     cin >> directoryName;
 
     vector<string> files;
-    for (const auto& entry : fs::directory_iterator(directoryName)) {
+    for (const auto &entry : fs::directory_iterator(directoryName)) {
         if (entry.path().extension().string() == ".csv")
             files.push_back(entry.path().string());
     }
 
     vector<string> countries;
     vector<vector<string> > datas;
-    for (const string& fileName : files) {
+    for (const string &fileName : files) {
         ifstream file;
         file.open(fileName);
 
@@ -47,21 +49,22 @@ int main() {
 
     for (int i = 0; i < datas.size(); i++) {
         for (int j = 1; j < datas[i].size(); j++) {
-            countryPoints[j-1].push_back(atoi(datas[i][j].c_str()));
+            countryPoints[j - 1].push_back(atoi(datas[i][j].c_str()));
         }
     }
 
     for (int i = 0; i < countries.size(); i++) {
         cout << countries[i] << ": ";
-        for (auto points : countryPoints[i])
-            cout << points << " ";
+        vector<int> Indexes = getSortedIndexes(countryPoints[i]);
+        for (int p : Indexes)
+            cout << countries[p] << " ";
         cout << endl;
     }
 
     return 0;
 }
 
-vector<string> split(const string& a, char delimeter) {
+vector<string> split(const string &a, char delimeter) {
     vector<string> splitedString;
     string b;
     for (char symbol : a) {
@@ -74,4 +77,17 @@ vector<string> split(const string& a, char delimeter) {
     }
     splitedString.push_back(b);
     return splitedString;
+}
+
+vector<int> getSortedIndexes(vector<int> &points) {
+    vector<int> indexes;
+    for (int i = 0; i < points.size(); i++)
+        indexes.push_back(i);
+    for (int i = 0; i < points.size() - 1; i++)
+        for (int j = i + 1; j < points.size(); j++)
+            if (points[i] < points[j]) {
+                swap(points[i], points[j]);
+                swap(indexes[i], indexes[j]);
+            }
+    return indexes;
 }
