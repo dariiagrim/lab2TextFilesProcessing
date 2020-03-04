@@ -63,8 +63,15 @@ int main() {
             points[countries[indexes[j]]] += 10 - j;
     }
 
-    for (string country : countries) {
-        cout << country << " -> " << points[country] << endl;
+    vector<int> finalPoints;
+    for (int i = 0; i < countries.size(); i++) {
+        finalPoints.push_back(points[countries[i]]);
+    }
+
+    vector<int> indexes = getSortedIndexes(finalPoints);
+
+    for (int i = 0; i < 10; i++) {
+        cout << countries[indexes[i]] << ": " << finalPoints[i] << endl;
     }
 
     return 0;
