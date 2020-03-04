@@ -70,9 +70,13 @@ int main() {
 
     vector<int> indexes = getSortedIndexes(finalPoints);
 
+    ofstream out("results.csv");
+
     for (int i = 0; i < 10; i++) {
-        cout << countries[indexes[i]] << ": " << finalPoints[i] << endl;
+        out << countries[indexes[i]] << "," << finalPoints[i] << endl;
     }
+
+    out.close();
 
     return 0;
 }
