@@ -49,8 +49,22 @@ int main() {
 
     for (int i = 0; i < datas.size(); i++) {
         for (int j = 1; j < datas[i].size(); j++) {
-            countryPoints[j - 1].push_back(atoi(datas[i][j].c_str()));
+            if (datas[i][j] != "-----")
+                countryPoints[j - 1].push_back(atoi(datas[i][j].c_str()));
+            else {
+                if (countryPoints[j-1].size() != 0)
+                    countryPoints[j - 1].push_back(*(countryPoints[j - 1].end() - 1));
+                else
+                    countryPoints[j - 1].push_back(0);
+            }
         }
+    }
+
+    for (int i = 0; i < countryPoints.size(); i++) {
+        cout << countries[i] << ": ";
+        for (int j = 0; j < countryPoints[i].size(); j++)
+            cout << countryPoints[i][j] << " ";
+        cout << endl;
     }
 
     map<string, int> points;
