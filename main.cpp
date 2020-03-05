@@ -10,7 +10,6 @@ using namespace std;
 namespace fs = experimental::filesystem;
 
 vector<string> split(const string &, char);
-
 vector<int> getSortedIndexes(vector<int> &);
 
 int main() {
@@ -49,7 +48,7 @@ int main() {
 
     for (int i = 0; i < datas.size(); i++) {
         for (int j = 1; j < datas[i].size(); j++) {
-            if (datas[i][j] != "-----")
+            if (datas[i][j][0] != '-')
                 countryPoints[j - 1].push_back(atoi(datas[i][j].c_str()));
             else {
                 if (countryPoints[j-1].size() != 0)
