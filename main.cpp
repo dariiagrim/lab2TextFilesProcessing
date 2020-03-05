@@ -84,14 +84,30 @@ int main() {
 vector<string> split(const string &a, char delimeter) {
     vector<string> splitedString;
     string b;
-    for (char symbol : a) {
-        if (symbol != delimeter)
-            b.push_back(symbol);
-        else {
-            splitedString.push_back(b);
-            b = "";
+    bool Flag = false;
+    for (int i = 0; i < a.length(); i++) {
+        if (a[i] == '"' && !Flag) {
+            Flag = true;
+            continue;
+        }
+        if (!Flag) {
+            if (a[i] != delimeter)
+                b.push_back(a[i]);
+            else {
+                splitedString.push_back(b);
+                b = "";
+            }
+        } else {
+            if (a[i] != '"')
+                b.push_back(a[i]);
+            else {
+                Flag = false;
+
+            }
         }
     }
+
+
     splitedString.push_back(b);
     return splitedString;
 }
